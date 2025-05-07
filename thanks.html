@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>計測完了</title>
+        <meta name="description" content="テストサイト">
+    <!-- CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&family=Mochiy+Pop+One&family=Philosopher:wght@700&family=Reggae+One&display=swap" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="thanks" class="big-bg">
+            <header>
+            </header>
+            <div class="home-content wrapper">
+                <h2 class="page-title">計測終了</h2>
+            </div>
+        </div>
+        <script>
+            (function acsTrack(){
+            var PV = "phzueb9rtem7";
+            var _ARGSV = "成果識別子";
+            var KEYS = {cid : ["CL_", "ACT_", "cid_auth_get_type"], plid : ["PL_", "APT_", "plid_auth_get_type"]};
+            var turl = "https://echod.jp/track.php?p=" + PV + "&args=" + _ARGSV;
+            var cks = document.cookie.split("; ").reduce(function(ret, s){ var kv = s.split("="); if(kv[0] && kv[1]) ret[kv[0]] = kv[1]; return ret; }, []);
+            turl = Object.keys(KEYS).reduce(function(url, k){ var vk = KEYS[k][0] + PV; var tk = KEYS[k][1] + PV; var v = "", t = ""; if(cks[vk]){ v = cks[vk]; if(cks[tk]) t = cks[tk]; }else if(localStorage.getItem(vk)){ v = localStorage.getItem(vk); t = "ls"; } if(v) url += "&" + k + "=" + v; if(t) url += "&" + KEYS[k][2] + "=" + t; return url; }, turl);
+            var xhr = new XMLHttpRequest(); xhr.open("GET", turl); xhr.send(); })();
+            </script>
+    </body>
+</html>
